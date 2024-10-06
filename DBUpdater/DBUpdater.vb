@@ -7,6 +7,8 @@ Imports System.Collections.Generic
 Imports Microsoft.VisualBasic.Logging
 Imports DbUp.Engine.Output
 Imports System.Reflection
+Imports System.Security.Cryptography
+Imports System.Text
 
 
 Public Class DBUpdater
@@ -28,7 +30,15 @@ Public Class DBUpdater
             ' Load values from config into the form
             txtServer.Text = ConfigurationManager.AppSettings("Server")
             txtLogin.Text = ConfigurationManager.AppSettings("Login")
-            txtPassword.Text = ConfigurationManager.AppSettings("Password")
+            'txtPassword.Text = ConfigurationManager.AppSettings("Password")
+            ' Decrypt the password before loading it
+            Dim encryptedPassword As String = ConfigurationManager.AppSettings("Password")
+            If Not String.IsNullOrEmpty(encryptedPassword) Then
+                txtPassword.Text = DecryptString(encryptedPassword)
+            Else
+                txtPassword.Text = String.Empty
+            End If
+
         Catch ex As Exception
             MessageBox.Show("Error reading config: " & ex.Message)
         End Try
@@ -63,13 +73,30 @@ Public Class DBUpdater
             ' Save the server, login, and password back to App.config
             UpdateAppConfig("Server", txtServer.Text)
             UpdateAppConfig("Login", txtLogin.Text)
-            UpdateAppConfig("Password", txtPassword.Text)
+            'UpdateAppConfig("Password", txtPassword.Text)
+            ' Encrypt the password before saving it
+            Dim encryptedPassword As String = EncryptString(txtPassword.Text)
+            UpdateAppConfig("Password", encryptedPassword)
 
             MessageBox.Show("Connected successfully!")
         Catch ex As Exception
             MessageBox.Show("Connection failed: " & ex.Message)
         End Try
     End Sub
+
+    ' Helper function to encrypt a string
+    Private Function EncryptString(input As String) As String
+        Dim inputBytes As Byte() = Encoding.UTF8.GetBytes(input)
+        Dim encryptedBytes As Byte() = ProtectedData.Protect(inputBytes, Nothing, DataProtectionScope.CurrentUser)
+        Return Convert.ToBase64String(encryptedBytes)
+    End Function
+
+    ' Helper function to decrypt a string
+    Private Function DecryptString(input As String) As String
+        Dim encryptedBytes As Byte() = Convert.FromBase64String(input)
+        Dim decryptedBytes As Byte() = ProtectedData.Unprotect(encryptedBytes, Nothing, DataProtectionScope.CurrentUser)
+        Return Encoding.UTF8.GetString(decryptedBytes)
+    End Function
 
     ' Select button click handler to run the query and show results from SchemaVersions
     Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
