@@ -2,6 +2,8 @@
 
 DBUpdater is a Windows Forms application built in VB.Net that allows users to connect to SQL Server databases, run database schema migrations using embedded SQL scripts, and save database connection settings to both the App.config file and the Windows Registry. The application also detects the highest version of SQL scripts and displays it.
 
+![DBUpdater Screenshot](images/Screenshot001.png)
+
 ## Features
 
 - **SQL Server Connection**: Easily connect to a SQL Server by entering server details, login credentials, and selecting a target database.
