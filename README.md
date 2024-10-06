@@ -1,6 +1,6 @@
 # DBUpdater
 
-DBUpdater is a sample project built as a Windows Forms application in VB.Net that allows users to connect to SQL Server databases, run database schema migrations using embedded SQL scripts, and save database connection settings to both the App.config file and the Windows Registry. The application also detects the highest version of SQL scripts and displays it.
+DBUpdater is a template application built as a Windows Forms application in VB.Net that allows users to connect to SQL Server databases, run database schema migrations using embedded SQL scripts, and save database connection settings to both the App.config file and the Windows Registry. The application also detects the highest version of SQL scripts and displays it.
 
 You may download/clone it and use it as a basis for your own implementation, customizing it and adding the SQL updatscript for your project.
 This project is not useful without adding your own script and building it, but only serve as an example of implementation of DbUp into a VB.Net project to create a windows form application that handle the database migration of a project.
