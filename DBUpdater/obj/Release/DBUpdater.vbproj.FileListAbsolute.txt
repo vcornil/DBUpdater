@@ -16,3 +16,4 @@ C:\Users\vince\OneDrive\GitHUB\DBUpdater\DBUpdater\obj\Release\DBUpdater.vbproj.
 C:\Users\vince\OneDrive\GitHUB\DBUpdater\DBUpdater\obj\Release\DBUpdater.exe
 C:\Users\vince\OneDrive\GitHUB\DBUpdater\DBUpdater\obj\Release\DBUpdater.xml
 C:\Users\vince\OneDrive\GitHUB\DBUpdater\DBUpdater\obj\Release\DBUpdater.pdb
+C:\Users\vince\OneDrive\GitHUB\DBUpdater\DBUpdater\obj\Release\DBUpdater.AboutForm.resources

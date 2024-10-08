@@ -102,9 +102,9 @@ Partial Class DBUpdater
         '
         Me.btnConnect.Location = New System.Drawing.Point(108, 115)
         Me.btnConnect.Name = "btnConnect"
-        Me.btnConnect.Size = New System.Drawing.Size(75, 23)
+        Me.btnConnect.Size = New System.Drawing.Size(100, 23)
         Me.btnConnect.TabIndex = 6
-        Me.btnConnect.Text = "Connect"
+        Me.btnConnect.Text = "&Open Connection"
         Me.btnConnect.UseVisualStyleBackColor = True
         '
         'cmbDatabases
@@ -132,7 +132,7 @@ Partial Class DBUpdater
         Me.btnSelect.Enabled = False
         Me.btnSelect.Location = New System.Drawing.Point(108, 178)
         Me.btnSelect.Name = "btnSelect"
-        Me.btnSelect.Size = New System.Drawing.Size(75, 23)
+        Me.btnSelect.Size = New System.Drawing.Size(99, 23)
         Me.btnSelect.TabIndex = 10
         Me.btnSelect.Text = "Select"
         Me.btnSelect.UseVisualStyleBackColor = True
@@ -154,7 +154,7 @@ Partial Class DBUpdater
         Me.txtMigrationOutput.Name = "txtMigrationOutput"
         Me.txtMigrationOutput.ReadOnly = True
         Me.txtMigrationOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtMigrationOutput.Size = New System.Drawing.Size(410, 221)
+        Me.txtMigrationOutput.Size = New System.Drawing.Size(396, 221)
         Me.txtMigrationOutput.TabIndex = 13
         Me.txtMigrationOutput.TabStop = False
         '
@@ -180,7 +180,7 @@ Partial Class DBUpdater
         Me.btnSaveToRegistry.Size = New System.Drawing.Size(105, 23)
         Me.btnSaveToRegistry.TabIndex = 15
         Me.btnSaveToRegistry.TabStop = False
-        Me.btnSaveToRegistry.Text = "Update Registry"
+        Me.btnSaveToRegistry.Text = "&Update Registry"
         Me.btnSaveToRegistry.UseVisualStyleBackColor = True
         '
         'btnClose
@@ -189,7 +189,7 @@ Partial Class DBUpdater
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
         Me.btnClose.TabIndex = 16
-        Me.btnClose.Text = "Close"
+        Me.btnClose.Text = "&Quit"
         Me.btnClose.UseVisualStyleBackColor = True
         '
         'txtCurrentVersion
@@ -225,11 +225,14 @@ Partial Class DBUpdater
         '
         Me.btnCopyToClipboard.BackgroundImage = Global.DBUpdater.My.Resources.Resources.Copy
         Me.btnCopyToClipboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnCopyToClipboard.Location = New System.Drawing.Point(524, 354)
+        Me.btnCopyToClipboard.Location = New System.Drawing.Point(510, 354)
         Me.btnCopyToClipboard.Name = "btnCopyToClipboard"
-        Me.btnCopyToClipboard.Size = New System.Drawing.Size(36, 37)
+        Me.btnCopyToClipboard.Size = New System.Drawing.Size(50, 86)
         Me.btnCopyToClipboard.TabIndex = 19
         Me.btnCopyToClipboard.TabStop = False
+        Me.btnCopyToClipboard.Text = "&Copy"
+        Me.btnCopyToClipboard.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btnCopyToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnCopyToClipboard.UseVisualStyleBackColor = True
         '
         'btnAbout
@@ -239,7 +242,7 @@ Partial Class DBUpdater
         Me.btnAbout.Size = New System.Drawing.Size(75, 23)
         Me.btnAbout.TabIndex = 20
         Me.btnAbout.TabStop = False
-        Me.btnAbout.Text = "About"
+        Me.btnAbout.Text = "&About"
         Me.btnAbout.UseVisualStyleBackColor = True
         '
         'DBUpdater
