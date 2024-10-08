@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|c:\\users\\vince\\onedrive\\github\\dbupdater\\dbupdater\\dbupdater.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\dbupdater.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|solutionrelative:dbupdater.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\dbupdater.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|c:\\users\\vince\\onedrive\\github\\dbupdater\\dbupdater\\dbupdater.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|solutionrelative:dbupdater.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|c:\\users\\vince\\onedrive\\github\\dbupdater\\dbupdater\\aboutform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|solutionrelative:aboutform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|c:\\users\\vince\\onedrive\\github\\dbupdater\\dbupdater\\aboutform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|solutionrelative:aboutform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\dbupdater.designer.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -22,8 +30,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AboutForm.vb",
+              "DocumentMoniker": "C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\AboutForm.vb",
+              "RelativeDocumentMoniker": "AboutForm.vb",
+              "ToolTip": "C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\AboutForm.vb",
+              "RelativeToolTip": "AboutForm.vb",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAuwB0AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-10-08T07:41:01.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AboutForm.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\AboutForm.vb",
+              "RelativeDocumentMoniker": "AboutForm.vb",
+              "ToolTip": "C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\AboutForm.vb [Design]",
+              "RelativeToolTip": "AboutForm.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-10-08T07:35:13.688Z",
+              "EditorCaption": " [Design]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -32,7 +65,7 @@
               "RelativeDocumentMoniker": "DBUpdater.vb",
               "ToolTip": "C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\DBUpdater.vb",
               "RelativeToolTip": "DBUpdater.vb",
-              "ViewState": "AgIAAO4AAAAAAAAAAAAAwKEAAABuAAAAAAAAAA==",
+              "ViewState": "AgIAAGkBAAAAAAAAAAAmwHwBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-10-05T21:51:47.214Z",
               "EditorCaption": ""
@@ -51,13 +84,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "DBUpdater.Designer.vb",
               "DocumentMoniker": "C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\DBUpdater.Designer.vb",
               "RelativeDocumentMoniker": "DBUpdater.Designer.vb",
               "ToolTip": "C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\DBUpdater.Designer.vb",
               "RelativeToolTip": "DBUpdater.Designer.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-10-05T21:51:20.055Z",
               "EditorCaption": ""

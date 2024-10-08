@@ -21,7 +21,8 @@ Public Class DBUpdater
             If ConfigurationManager.AppSettings("Server") Is Nothing OrElse
                ConfigurationManager.AppSettings("Login") Is Nothing OrElse
                ConfigurationManager.AppSettings("Password") Is Nothing OrElse
-               ConfigurationManager.ConnectionStrings("MyConnectionString") Is Nothing Then
+               ConfigurationManager.ConnectionStrings("MyConnectionString") Is Nothing OrElse
+                ConfigurationManager.AppSettings("SavePassword") Is Nothing Then
 
                 ' If any of the settings are missing, create the config
                 CreateDefaultConfig()
@@ -30,6 +31,10 @@ Public Class DBUpdater
             ' Load values from config into the form
             txtServer.Text = ConfigurationManager.AppSettings("Server")
             txtLogin.Text = ConfigurationManager.AppSettings("Login")
+
+            Dim savePassword As Boolean = Boolean.Parse(ConfigurationManager.AppSettings("SavePassword"))
+            chkSavePassword.Checked = savePassword
+
             'txtPassword.Text = ConfigurationManager.AppSettings("Password")
             ' Decrypt the password before loading it
             Dim encryptedPassword As String = ConfigurationManager.AppSettings("Password")
@@ -51,6 +56,12 @@ Public Class DBUpdater
     ' Connect button click handler
     Private Sub btnConnect_Click(sender As Object, e As EventArgs) Handles btnConnect.Click
         Try
+
+            ' Clear the DataGridView and the migration output text
+            dgvDBVersion.Rows.Clear()      ' Clear the DataGridView
+            txtMigrationOutput.Clear()     ' Clear the migration output textbox
+            cmbDatabases.SelectedIndex = -1
+
             ' Construct the connection string dynamically
             Dim connString As String = $"Server={txtServer.Text};User Id={txtLogin.Text};Password={txtPassword.Text};"
             connection = New SqlConnection(connString)
@@ -59,6 +70,7 @@ Public Class DBUpdater
             ' If connection is successful, enable the databases dropdown and select button
             cmbDatabases.Enabled = True
             btnSelect.Enabled = True
+            btnRunMigration.Enabled = False
 
             ' Populate the list of databases
             Dim cmd As New SqlCommand("SELECT name FROM sys.databases WHERE name NOT IN ('master', 'model', 'msdb', 'tempdb')", connection)
@@ -74,9 +86,15 @@ Public Class DBUpdater
             UpdateAppConfig("Server", txtServer.Text)
             UpdateAppConfig("Login", txtLogin.Text)
             'UpdateAppConfig("Password", txtPassword.Text)
-            ' Encrypt the password before saving it
-            Dim encryptedPassword As String = EncryptString(txtPassword.Text)
-            UpdateAppConfig("Password", encryptedPassword)
+            UpdateAppConfig("SavePassword", chkSavePassword.Checked.ToString())
+
+            ' Handle the password saving based on checkbox state
+            If chkSavePassword.Checked Then
+                UpdateAppConfig("Password", EncryptString(txtPassword.Text))
+            Else
+                RemoveAppConfig("Password") ' Remove password if checkbox is unchecked
+            End If
+
 
             MessageBox.Show("Connected successfully!")
         Catch ex As Exception
@@ -98,8 +116,21 @@ Public Class DBUpdater
         Return Encoding.UTF8.GetString(decryptedBytes)
     End Function
 
+    Private Sub RemoveAppConfig(key As String)
+        Dim config As Configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None)
+        If ConfigurationManager.AppSettings(key) IsNot Nothing Then
+            config.AppSettings.Settings.Remove(key)
+        End If
+        config.Save(ConfigurationSaveMode.Modified)
+        ConfigurationManager.RefreshSection("appSettings")
+    End Sub
+
     ' Select button click handler to run the query and show results from SchemaVersions
     Private Sub btnSelect_Click(sender As Object, e As EventArgs) Handles btnSelect.Click
+
+        ' Clear the DataGridView and the migration output text
+        dgvDBVersion.Rows.Clear()      ' Clear the DataGridView
+        txtMigrationOutput.Clear()     ' Clear the migration output textbox
 
         ' Clear the previous version
         txtCurrentVersion.Clear()
@@ -294,14 +325,30 @@ Public Class DBUpdater
             End If
         End If
 
-        ' Fetch password from .config or registry
-        Dim password As String = ConfigurationManager.AppSettings("Password")
-        If String.IsNullOrEmpty(password) Then
-            ' Try to read the value from the registry
-            password = Registry.GetValue(registryKeyPath, "Password", Nothing)?.ToString()
-            If Not String.IsNullOrEmpty(password) Then
-                ' Save to .config if found in the registry
-                config.AppSettings.Settings.Add("Password", password)
+        ' Check if "SavePassword" option exists
+        Dim savePassword As Boolean = False
+        If ConfigurationManager.AppSettings("SavePassword") Is Nothing Then
+            config.AppSettings.Settings.Add("SavePassword", "False")
+        Else
+            savePassword = Boolean.Parse(ConfigurationManager.AppSettings("SavePassword"))
+        End If
+
+
+        ' Fetch password if "SavePassword" is true
+        If savePassword Then
+            Dim password As String = ConfigurationManager.AppSettings("Password")
+            If String.IsNullOrEmpty(password) Then
+                ' Try to read the password from the registry
+                password = Registry.GetValue(registryKeyPath, "Password", Nothing)?.ToString()
+                If Not String.IsNullOrEmpty(password) Then
+                    ' Encrypt and save the password to the config file if it exists in the registry
+                    config.AppSettings.Settings.Add("Password", EncryptString(password))
+                End If
+            End If
+        Else
+            ' If SavePassword is False, make sure password is not saved in the config file
+            If ConfigurationManager.AppSettings("Password") IsNot Nothing Then
+                config.AppSettings.Settings.Remove("Password")
             End If
         End If
 
@@ -333,6 +380,21 @@ Public Class DBUpdater
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         ' Close the application
         Me.Close()
+    End Sub
+
+    Private Sub btnCopyToClipboard_Click(sender As Object, e As EventArgs) Handles btnCopyToClipboard.Click
+        ' Copy the content of txtMigrationOutput to the clipboard
+        If Not String.IsNullOrEmpty(txtMigrationOutput.Text) Then
+            Clipboard.SetText(txtMigrationOutput.Text)
+            MessageBox.Show("Migration output copied to clipboard.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("Migration output is empty. Nothing to copy.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+
+    Private Sub btnAbout_Click(sender As Object, e As EventArgs) Handles btnAbout.Click
+        Dim aboutForm As New AboutForm()
+        aboutForm.ShowDialog() ' Open the About form as a modal dialog
     End Sub
 End Class
 

@@ -16,3 +16,4 @@ C:\Users\vince\OneDrive\GitHUB\DBUpdater\DBUpdater\bin\Debug\Microsoft.IdentityM
 C:\Users\vince\OneDrive\GitHUB\DBUpdater\DBUpdater\obj\Debug\DBUpdater.vbproj.Up2Date
 C:\Users\vince\OneDrive\GitHUB\DBUpdater\DBUpdater\obj\Debug\DBUpdater.exe
 C:\Users\vince\OneDrive\GitHUB\DBUpdater\DBUpdater\obj\Debug\DBUpdater.pdb
+C:\Users\vince\OneDrive\GitHUB\DBUpdater\DBUpdater\obj\Debug\DBUpdater.AboutForm.resources

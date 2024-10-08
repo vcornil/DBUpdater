@@ -40,6 +40,9 @@ Partial Class DBUpdater
         Me.btnClose = New System.Windows.Forms.Button()
         Me.txtCurrentVersion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.chkSavePassword = New System.Windows.Forms.CheckBox()
+        Me.btnCopyToClipboard = New System.Windows.Forms.Button()
+        Me.btnAbout = New System.Windows.Forms.Button()
         CType(Me.dgvDBVersion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -63,7 +66,6 @@ Partial Class DBUpdater
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(452, 20)
         Me.txtPassword.TabIndex = 2
-        Me.txtPassword.TabStop = False
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'lblServer
@@ -98,7 +100,7 @@ Partial Class DBUpdater
         '
         'btnConnect
         '
-        Me.btnConnect.Location = New System.Drawing.Point(108, 91)
+        Me.btnConnect.Location = New System.Drawing.Point(108, 115)
         Me.btnConnect.Name = "btnConnect"
         Me.btnConnect.Size = New System.Drawing.Size(75, 23)
         Me.btnConnect.TabIndex = 6
@@ -107,6 +109,7 @@ Partial Class DBUpdater
         '
         'cmbDatabases
         '
+        Me.cmbDatabases.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbDatabases.Enabled = False
         Me.cmbDatabases.FormattingEnabled = True
         Me.cmbDatabases.Location = New System.Drawing.Point(108, 150)
@@ -151,20 +154,23 @@ Partial Class DBUpdater
         Me.txtMigrationOutput.Name = "txtMigrationOutput"
         Me.txtMigrationOutput.ReadOnly = True
         Me.txtMigrationOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txtMigrationOutput.Size = New System.Drawing.Size(452, 221)
+        Me.txtMigrationOutput.Size = New System.Drawing.Size(410, 221)
         Me.txtMigrationOutput.TabIndex = 13
+        Me.txtMigrationOutput.TabStop = False
         '
         'dgvDBVersion
         '
         Me.dgvDBVersion.AllowUserToAddRows = False
         Me.dgvDBVersion.AllowUserToDeleteRows = False
         Me.dgvDBVersion.AllowUserToResizeRows = False
+        Me.dgvDBVersion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvDBVersion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvDBVersion.Location = New System.Drawing.Point(108, 207)
         Me.dgvDBVersion.Name = "dgvDBVersion"
         Me.dgvDBVersion.ReadOnly = True
         Me.dgvDBVersion.Size = New System.Drawing.Size(452, 71)
         Me.dgvDBVersion.TabIndex = 14
+        Me.dgvDBVersion.TabStop = False
         '
         'btnSaveToRegistry
         '
@@ -173,6 +179,7 @@ Partial Class DBUpdater
         Me.btnSaveToRegistry.Name = "btnSaveToRegistry"
         Me.btnSaveToRegistry.Size = New System.Drawing.Size(105, 23)
         Me.btnSaveToRegistry.TabIndex = 15
+        Me.btnSaveToRegistry.TabStop = False
         Me.btnSaveToRegistry.Text = "Update Registry"
         Me.btnSaveToRegistry.UseVisualStyleBackColor = True
         '
@@ -192,6 +199,7 @@ Partial Class DBUpdater
         Me.txtCurrentVersion.Name = "txtCurrentVersion"
         Me.txtCurrentVersion.Size = New System.Drawing.Size(100, 20)
         Me.txtCurrentVersion.TabIndex = 17
+        Me.txtCurrentVersion.TabStop = False
         '
         'Label1
         '
@@ -203,11 +211,45 @@ Partial Class DBUpdater
         Me.Label1.Text = "Current version"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
+        'chkSavePassword
+        '
+        Me.chkSavePassword.AutoSize = True
+        Me.chkSavePassword.Location = New System.Drawing.Point(108, 92)
+        Me.chkSavePassword.Name = "chkSavePassword"
+        Me.chkSavePassword.Size = New System.Drawing.Size(99, 17)
+        Me.chkSavePassword.TabIndex = 3
+        Me.chkSavePassword.Text = "Save password"
+        Me.chkSavePassword.UseVisualStyleBackColor = True
+        '
+        'btnCopyToClipboard
+        '
+        Me.btnCopyToClipboard.BackgroundImage = Global.DBUpdater.My.Resources.Resources.Copy
+        Me.btnCopyToClipboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnCopyToClipboard.Location = New System.Drawing.Point(524, 354)
+        Me.btnCopyToClipboard.Name = "btnCopyToClipboard"
+        Me.btnCopyToClipboard.Size = New System.Drawing.Size(36, 37)
+        Me.btnCopyToClipboard.TabIndex = 19
+        Me.btnCopyToClipboard.TabStop = False
+        Me.btnCopyToClipboard.UseVisualStyleBackColor = True
+        '
+        'btnAbout
+        '
+        Me.btnAbout.Location = New System.Drawing.Point(404, 589)
+        Me.btnAbout.Name = "btnAbout"
+        Me.btnAbout.Size = New System.Drawing.Size(75, 23)
+        Me.btnAbout.TabIndex = 20
+        Me.btnAbout.TabStop = False
+        Me.btnAbout.Text = "About"
+        Me.btnAbout.UseVisualStyleBackColor = True
+        '
         'DBUpdater
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(572, 624)
+        Me.Controls.Add(Me.btnAbout)
+        Me.Controls.Add(Me.btnCopyToClipboard)
+        Me.Controls.Add(Me.chkSavePassword)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtCurrentVersion)
         Me.Controls.Add(Me.btnClose)
@@ -254,4 +296,7 @@ Partial Class DBUpdater
     Friend WithEvents btnClose As Button
     Friend WithEvents txtCurrentVersion As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents chkSavePassword As CheckBox
+    Friend WithEvents btnCopyToClipboard As Button
+    Friend WithEvents btnAbout As Button
 End Class
