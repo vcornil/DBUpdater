@@ -44,6 +44,8 @@ Public Class DBUpdater
                 txtPassword.Text = String.Empty
             End If
 
+            btnConnect.BackColor = Color.LightCoral
+
         Catch ex As Exception
             MessageBox.Show("Error reading config: " & ex.Message)
         End Try
@@ -56,6 +58,9 @@ Public Class DBUpdater
     ' Connect button click handler
     Private Sub btnConnect_Click(sender As Object, e As EventArgs) Handles btnConnect.Click
         Try
+
+            btnConnect.BackColor = SystemColors.ButtonFace
+            btnSelect.BackColor = Color.LightCoral
 
             ' Clear the DataGridView and the migration output text
             dgvDBVersion.Rows.Clear()      ' Clear the DataGridView
@@ -131,6 +136,9 @@ Public Class DBUpdater
         ' Clear the DataGridView and the migration output text
         dgvDBVersion.Rows.Clear()      ' Clear the DataGridView
         txtMigrationOutput.Clear()     ' Clear the migration output textbox
+
+        btnSelect.BackColor = SystemColors.ButtonFace
+        btnRunMigration.BackColor = Color.LightCoral
 
         ' Clear the previous version
         txtCurrentVersion.Clear()
@@ -235,6 +243,9 @@ Public Class DBUpdater
     Private Sub btnRunMigration_Click(sender As Object, e As EventArgs) Handles btnRunMigration.Click
         If cmbDatabases.SelectedItem IsNot Nothing Then
             Try
+
+                btnRunMigration.BackColor = SystemColors.ButtonFace
+
                 ' Update connection string with the selected database
                 Dim connString As String = $"Server={txtServer.Text};Database={cmbDatabases.SelectedItem.ToString()};User Id={txtLogin.Text};Password={txtPassword.Text};"
 
@@ -395,6 +406,17 @@ Public Class DBUpdater
     Private Sub btnAbout_Click(sender As Object, e As EventArgs) Handles btnAbout.Click
         Dim aboutForm As New AboutForm()
         aboutForm.ShowDialog() ' Open the About form as a modal dialog
+    End Sub
+
+    Private Sub cmbDatabases_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbDatabases.SelectedIndexChanged
+        btnSelect.BackColor = Color.LightCoral
+        btnRunMigration.BackColor = SystemColors.ButtonFace
+        btnRunMigration.Enabled = False
+
+        ' Clear the DataGridView and the migration output text
+        dgvDBVersion.Rows.Clear()      ' Clear the DataGridView
+        txtMigrationOutput.Clear()     ' Clear the migration output textbox
+
     End Sub
 End Class
 

@@ -28,6 +28,7 @@ Partial Class AboutForm
         Me.btnClose = New System.Windows.Forms.Button()
         Me.lblProjectName = New System.Windows.Forms.Label()
         Me.lblCopyright = New System.Windows.Forms.Label()
+        Me.LinkLabel = New System.Windows.Forms.LinkLabel()
         CType(Me.dgvScripts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -54,6 +55,7 @@ Partial Class AboutForm
         '
         'btnClose
         '
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClose.Location = New System.Drawing.Point(399, 415)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
@@ -81,11 +83,22 @@ Partial Class AboutForm
         Me.lblCopyright.TabIndex = 3
         Me.lblCopyright.Text = "©    CoV Consult - 2024"
         '
+        'LinkLabel
+        '
+        Me.LinkLabel.AutoSize = True
+        Me.LinkLabel.Location = New System.Drawing.Point(12, 108)
+        Me.LinkLabel.Name = "LinkLabel"
+        Me.LinkLabel.Size = New System.Drawing.Size(115, 13)
+        Me.LinkLabel.TabIndex = 4
+        Me.LinkLabel.TabStop = True
+        Me.LinkLabel.Text = "https://dbup.github.io/"
+        '
         'AboutForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(487, 450)
+        Me.Controls.Add(Me.LinkLabel)
         Me.Controls.Add(Me.lblCopyright)
         Me.Controls.Add(Me.lblProjectName)
         Me.Controls.Add(Me.btnClose)
@@ -108,4 +121,5 @@ Partial Class AboutForm
     Friend WithEvents btnClose As Button
     Friend WithEvents lblProjectName As Label
     Friend WithEvents lblCopyright As Label
+    Friend WithEvents LinkLabel As LinkLabel
 End Class

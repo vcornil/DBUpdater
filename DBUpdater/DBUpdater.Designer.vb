@@ -100,6 +100,7 @@ Partial Class DBUpdater
         '
         'btnConnect
         '
+        Me.btnConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnConnect.Location = New System.Drawing.Point(108, 115)
         Me.btnConnect.Name = "btnConnect"
         Me.btnConnect.Size = New System.Drawing.Size(100, 23)
@@ -130,6 +131,7 @@ Partial Class DBUpdater
         'btnSelect
         '
         Me.btnSelect.Enabled = False
+        Me.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSelect.Location = New System.Drawing.Point(108, 178)
         Me.btnSelect.Name = "btnSelect"
         Me.btnSelect.Size = New System.Drawing.Size(99, 23)
@@ -140,6 +142,7 @@ Partial Class DBUpdater
         'btnRunMigration
         '
         Me.btnRunMigration.Enabled = False
+        Me.btnRunMigration.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnRunMigration.Location = New System.Drawing.Point(108, 325)
         Me.btnRunMigration.Name = "btnRunMigration"
         Me.btnRunMigration.Size = New System.Drawing.Size(452, 23)
@@ -175,6 +178,7 @@ Partial Class DBUpdater
         'btnSaveToRegistry
         '
         Me.btnSaveToRegistry.Enabled = False
+        Me.btnSaveToRegistry.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSaveToRegistry.Location = New System.Drawing.Point(455, 178)
         Me.btnSaveToRegistry.Name = "btnSaveToRegistry"
         Me.btnSaveToRegistry.Size = New System.Drawing.Size(105, 23)
@@ -185,12 +189,15 @@ Partial Class DBUpdater
         '
         'btnClose
         '
+        Me.btnClose.BackColor = System.Drawing.Color.Navy
+        Me.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClose.ForeColor = System.Drawing.Color.White
         Me.btnClose.Location = New System.Drawing.Point(485, 589)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
         Me.btnClose.TabIndex = 16
         Me.btnClose.Text = "&Quit"
-        Me.btnClose.UseVisualStyleBackColor = True
+        Me.btnClose.UseVisualStyleBackColor = False
         '
         'txtCurrentVersion
         '
@@ -225,6 +232,7 @@ Partial Class DBUpdater
         '
         Me.btnCopyToClipboard.BackgroundImage = Global.DBUpdater.My.Resources.Resources.Copy
         Me.btnCopyToClipboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnCopyToClipboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCopyToClipboard.Location = New System.Drawing.Point(510, 354)
         Me.btnCopyToClipboard.Name = "btnCopyToClipboard"
         Me.btnCopyToClipboard.Size = New System.Drawing.Size(50, 86)
@@ -237,6 +245,7 @@ Partial Class DBUpdater
         '
         'btnAbout
         '
+        Me.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAbout.Location = New System.Drawing.Point(404, 589)
         Me.btnAbout.Name = "btnAbout"
         Me.btnAbout.Size = New System.Drawing.Size(75, 23)
