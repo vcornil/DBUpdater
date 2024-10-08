@@ -9,13 +9,13 @@ Imports System.Runtime.InteropServices
 ' Vérifiez les valeurs des attributs de l'assembly
 
 <Assembly: AssemblyTitle("DBUpdater")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyDescription("Database updater - Using DbUp library")>
+<Assembly: AssemblyCompany("CoV Consult")>
 <Assembly: AssemblyProduct("DBUpdater")>
 <Assembly: AssemblyCopyright("Copyright ©  2024")>
 <Assembly: AssemblyTrademark("")>
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(True)>
 
 'Le GUID suivant est pour l'ID de la typelib si ce projet est exposé à COM
 <Assembly: Guid("3a648e49-e31b-478e-8c9d-15ac00bebd7e")>
@@ -28,5 +28,5 @@ Imports System.Runtime.InteropServices
 '      Révision
 '
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("24.10.8.0")>
+<Assembly: AssemblyFileVersion("24.10.8.0")>

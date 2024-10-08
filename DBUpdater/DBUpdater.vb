@@ -46,6 +46,10 @@ Public Class DBUpdater
 
             btnConnect.BackColor = Color.LightCoral
 
+            ' Display the build date on the label
+            Dim buildDate As DateTime = GetBuildDate()
+            lblBuildDate.Text = "Build Date: " & buildDate.ToString("MMMM dd, yyyy")
+
         Catch ex As Exception
             MessageBox.Show("Error reading config: " & ex.Message)
         End Try
@@ -248,7 +252,10 @@ Public Class DBUpdater
                 btnRunMigration.BackColor = SystemColors.ButtonFace
 
                 ' Update connection string with the selected database
-                Dim connString As String = $"Server={txtServer.Text};Database={cmbDatabases.SelectedItem.ToString()};User Id={txtLogin.Text};Password={txtPassword.Text};"
+                Dim connString As String = $"Server=" & txtServer.Text &
+                                            ";Database=" & cmbDatabases.SelectedItem.ToString() &
+                                            ";User Id=" & txtLogin.Text &
+                                            ";Password=" & txtPassword.Text & ";"
 
                 ' Create an instance of the custom logger
                 Dim customLogger As New CustomLogger()
@@ -419,6 +426,17 @@ Public Class DBUpdater
         txtMigrationOutput.Clear()     ' Clear the migration output textbox
 
     End Sub
+
+    ' Function to get the build date
+    Public Function GetBuildDate() As DateTime
+        Dim assembly As Assembly = Assembly.GetExecutingAssembly()
+        Dim version As Version = assembly.GetName().Version
+        ' Calculate the build date using the version information
+        Dim buildDate As New DateTime(2000, 1, 1)
+        buildDate = buildDate.AddYears(version.Major).AddMonths(version.Minor - 1).AddDays(version.Build - 1)
+        Return buildDate
+    End Function
+
 End Class
 
 

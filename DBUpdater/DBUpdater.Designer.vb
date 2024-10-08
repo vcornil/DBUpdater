@@ -43,6 +43,7 @@ Partial Class DBUpdater
         Me.chkSavePassword = New System.Windows.Forms.CheckBox()
         Me.btnCopyToClipboard = New System.Windows.Forms.Button()
         Me.btnAbout = New System.Windows.Forms.Button()
+        Me.lblBuildDate = New System.Windows.Forms.Label()
         CType(Me.dgvDBVersion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -254,11 +255,21 @@ Partial Class DBUpdater
         Me.btnAbout.Text = "&About"
         Me.btnAbout.UseVisualStyleBackColor = True
         '
+        'lblBuildDate
+        '
+        Me.lblBuildDate.AutoSize = True
+        Me.lblBuildDate.Location = New System.Drawing.Point(29, 598)
+        Me.lblBuildDate.Name = "lblBuildDate"
+        Me.lblBuildDate.Size = New System.Drawing.Size(69, 13)
+        Me.lblBuildDate.TabIndex = 21
+        Me.lblBuildDate.Text = "Build date: ,,,"
+        '
         'DBUpdater
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(572, 624)
+        Me.Controls.Add(Me.lblBuildDate)
         Me.Controls.Add(Me.btnAbout)
         Me.Controls.Add(Me.btnCopyToClipboard)
         Me.Controls.Add(Me.chkSavePassword)
@@ -311,4 +322,5 @@ Partial Class DBUpdater
     Friend WithEvents chkSavePassword As CheckBox
     Friend WithEvents btnCopyToClipboard As Button
     Friend WithEvents btnAbout As Button
+    Friend WithEvents lblBuildDate As Label
 End Class
