@@ -137,9 +137,6 @@ Public Class DBUpdater
         dgvDBVersion.Rows.Clear()      ' Clear the DataGridView
         txtMigrationOutput.Clear()     ' Clear the migration output textbox
 
-        btnSelect.BackColor = SystemColors.ButtonFace
-        btnRunMigration.BackColor = Color.LightCoral
-
         ' Clear the previous version
         txtCurrentVersion.Clear()
 
@@ -184,6 +181,10 @@ Public Class DBUpdater
 
         If cmbDatabases.SelectedItem IsNot Nothing Then
             Try
+
+                btnSelect.BackColor = SystemColors.ButtonFace
+                btnRunMigration.BackColor = Color.LightCoral
+
                 ' Update connection string with the selected database
                 Dim connString As String = $"Server={txtServer.Text};Database={cmbDatabases.SelectedItem.ToString()};User Id={txtLogin.Text};Password={txtPassword.Text};"
                 connection = New SqlConnection(connString)

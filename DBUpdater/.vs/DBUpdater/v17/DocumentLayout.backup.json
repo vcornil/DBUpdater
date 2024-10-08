@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\aboutform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|solutionrelative:aboutform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\dbupdater.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|solutionrelative:dbupdater.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|c:\\users\\vince\\onedrive\\github\\dbupdater\\dbupdater\\dbupdater.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\dbupdater.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|solutionrelative:dbupdater.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\dbupdater.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|solutionrelative:dbupdater.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|c:\\users\\vince\\onedrive\\github\\dbupdater\\dbupdater\\aboutform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|solutionrelative:aboutform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{88D88364-24DA-49F4-8A82-39B5ED47B28D}|DBUpdater.vbproj|C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\aboutform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -47,7 +47,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "AboutForm.vb [Design]",
               "DocumentMoniker": "C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\AboutForm.vb",
               "RelativeDocumentMoniker": "AboutForm.vb",
@@ -59,13 +59,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "DBUpdater.vb",
               "DocumentMoniker": "C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\DBUpdater.vb",
               "RelativeDocumentMoniker": "DBUpdater.vb",
               "ToolTip": "C:\\Users\\vince\\OneDrive\\GitHUB\\DBUpdater\\DBUpdater\\DBUpdater.vb",
               "RelativeToolTip": "DBUpdater.vb",
-              "ViewState": "AgIAAI8BAAAAAAAAAAAcwJ4BAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAkwLkAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-10-05T21:51:47.214Z",
               "EditorCaption": ""
@@ -92,7 +92,8 @@
               "RelativeToolTip": "DBUpdater.Designer.vb",
               "ViewState": "AgIAAMwAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-10-05T21:51:20.055Z"
+              "WhenOpened": "2024-10-05T21:51:20.055Z",
+              "EditorCaption": ""
             }
           ]
         }
